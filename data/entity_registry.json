@@ -1,0 +1,31 @@
+{
+  "description": "Manual identity registry from corpus mentions, not benchmark answers. Groups apply only to listed source documents and cases with matching named anchors. Amounts, crimes and sentences are always extracted from sources.",
+  "case_groups": [
+    {
+      "id": "case:hoang-nato-phannhibeauty",
+      "doc_ids": ["news-100260920221957595", "news-100260922111804786", "news-100260924095400982", "news-100260925144412498"],
+      "anchors": ["Dương Minh Tuấn", "Hoàng Nato", "Phan Kim Nhi"],
+      "evidence": "The articles identify Duong Minh Tuan as Hoang Nato, and describe the arrest and investigation with Phan Kim Nhi in the same HCMC operation. Other subcases without these anchors are not grouped."
+    },
+    {
+      "id": "case:vien-phap-y-tam-than-trung-uong",
+      "doc_ids": ["news-100260924105118645", "news-100260930085028036"],
+      "anchors": ["Lê Văn Đông", "Nguyễn Thị Mai Anh", "Trần Quốc An"],
+      "evidence": "Both articles describe the same institute case with 65 defendants, Le Van Dong and the Sam Son drug party; the second reports the continuing trial."
+    }
+  ],
+  "people": [
+    {
+      "id": "person:duong-minh-tuan-hoang-nato",
+      "name": "Dương Minh Tuấn",
+      "aliases": ["Hoàng Nato"],
+      "doc_ids": ["news-100260920221957595", "news-100260922111804786", "news-100260924095400982", "news-100260925144412498"]
+    },
+    {
+      "id": "person:phan-kim-nhi-phannhibeauty",
+      "name": "Phan Kim Nhi",
+      "aliases": ["Phannhibeauty", "TikToker Phannhibeauty"],
+      "doc_ids": ["news-100260920221957595", "news-100260922111804786", "news-100260924095400982", "news-100260925144412498"]
+    }
+  ]
+}

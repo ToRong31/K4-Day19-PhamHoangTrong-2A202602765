@@ -1,0 +1,313 @@
+{
+  "context_note": "Contexts below use doc_ids=[]: named entities, terms and global aggregation only. Q2 needs vector-search doc_ids in the real GraphRAG pipeline; these snapshots do not reproduce vector retrieval.",
+  "stats": {
+    "nodes": 558,
+    "relationships": 1148
+  },
+  "labels": [
+    {
+      "label": "Article",
+      "count": 18
+    },
+    {
+      "label": "Case",
+      "count": 14
+    },
+    {
+      "label": "Clause",
+      "count": 99
+    },
+    {
+      "label": "Crime",
+      "count": 13
+    },
+    {
+      "label": "DrugFinding",
+      "count": 17
+    },
+    {
+      "label": "Location",
+      "count": 13
+    },
+    {
+      "label": "Participation",
+      "count": 44
+    },
+    {
+      "label": "Person",
+      "count": 40
+    },
+    {
+      "label": "Rule",
+      "count": 267
+    },
+    {
+      "label": "Substance",
+      "count": 19
+    },
+    {
+      "label": "Term",
+      "count": 14
+    }
+  ],
+  "relationships": [
+    {
+      "type": "ATTRIBUTED_TO",
+      "count": 11
+    },
+    {
+      "type": "CHARGED_WITH",
+      "count": 38
+    },
+    {
+      "type": "DEFINES",
+      "count": 13
+    },
+    {
+      "type": "DEFINES_TERM",
+      "count": 14
+    },
+    {
+      "type": "FOR_SUBSTANCE",
+      "count": 291
+    },
+    {
+      "type": "HAS_CLAUSE",
+      "count": 99
+    },
+    {
+      "type": "HAS_FINDING",
+      "count": 17
+    },
+    {
+      "type": "HAS_PARTICIPATION",
+      "count": 44
+    },
+    {
+      "type": "HAS_RULE",
+      "count": 267
+    },
+    {
+      "type": "IN_CASE",
+      "count": 44
+    },
+    {
+      "type": "LOCATED_IN",
+      "count": 15
+    },
+    {
+      "type": "MENTIONS",
+      "count": 278
+    },
+    {
+      "type": "OF_SUBSTANCE",
+      "count": 17
+    }
+  ],
+  "source_coverage": [
+    {
+      "doc_id": "blhs-dieu-247",
+      "count": 12
+    },
+    {
+      "doc_id": "blhs-dieu-248",
+      "count": 28
+    },
+    {
+      "doc_id": "blhs-dieu-249",
+      "count": 45
+    },
+    {
+      "doc_id": "blhs-dieu-250",
+      "count": 46
+    },
+    {
+      "doc_id": "blhs-dieu-251",
+      "count": 39
+    },
+    {
+      "doc_id": "blhs-dieu-252",
+      "count": 45
+    },
+    {
+      "doc_id": "blhs-dieu-253",
+      "count": 24
+    },
+    {
+      "doc_id": "blhs-dieu-254",
+      "count": 14
+    },
+    {
+      "doc_id": "blhs-dieu-255",
+      "count": 21
+    },
+    {
+      "doc_id": "blhs-dieu-256",
+      "count": 10
+    },
+    {
+      "doc_id": "blhs-dieu-257",
+      "count": 21
+    },
+    {
+      "doc_id": "blhs-dieu-258",
+      "count": 21
+    },
+    {
+      "doc_id": "blhs-dieu-259",
+      "count": 13
+    },
+    {
+      "doc_id": "news-100260917203001265",
+      "count": 6
+    },
+    {
+      "doc_id": "news-100260918080821054",
+      "count": 11
+    },
+    {
+      "doc_id": "news-100260920221957595",
+      "count": 19
+    },
+    {
+      "doc_id": "news-100260922111804786",
+      "count": 6
+    },
+    {
+      "doc_id": "news-100260924095400982",
+      "count": 8
+    },
+    {
+      "doc_id": "news-100260924101703641",
+      "count": 3
+    },
+    {
+      "doc_id": "news-100260924105118645",
+      "count": 18
+    },
+    {
+      "doc_id": "news-100260924145818945",
+      "count": 4
+    },
+    {
+      "doc_id": "news-100260925144412498",
+      "count": 6
+    },
+    {
+      "doc_id": "news-100260926112415229",
+      "count": 3
+    },
+    {
+      "doc_id": "news-100260927182621527",
+      "count": 1
+    },
+    {
+      "doc_id": "news-100260928173914514",
+      "count": 13
+    },
+    {
+      "doc_id": "news-100260930085028036",
+      "count": 16
+    },
+    {
+      "doc_id": "news-100261002184934505",
+      "count": 1
+    },
+    {
+      "doc_id": "pcmt-dieu-1",
+      "count": 1
+    },
+    {
+      "doc_id": "pcmt-dieu-2",
+      "count": 15
+    },
+    {
+      "doc_id": "pcmt-dieu-3",
+      "count": 11
+    },
+    {
+      "doc_id": "pcmt-dieu-4",
+      "count": 5
+    },
+    {
+      "doc_id": "pcmt-dieu-5",
+      "count": 13
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "question": "Theo Luật Phòng, chống ma túy 2021, tiền chất là gì?",
+      "facts": [
+        "[pcmt-dieu-2 / Điều 2 Luật PCMT khoản 4] Tiền chất là hóa chất không thể thiếu được trong quá trình điều chế, sản xuất chất ma túy được quy định trong danh mục tiền chất do Chính phủ ban hành.",
+        "[pcmt-dieu-2 / Điều 2 Luật PCMT khoản 7] Phòng, chống ma túy là phòng ngừa, ngăn chặn, đấu tranh chống tội phạm và tệ nạn ma túy; kiểm soát các hoạt động hợp pháp liên quan đến ma túy."
+      ]
+    },
+    {
+      "id": "Q2",
+      "question": "Trong vụ đường dây mua bán hơn 36kg ma túy bị TAND TP.HCM xét xử ngày 28-9, những bị cáo nào lãnh án tử hình?",
+      "facts": [
+        "(Case: Sử dụng ma túy etomidate) -[LOCATED_IN {kind: occurrence}]-> (Location: TP.HCM)",
+        "(Case: Bắt giang hồ 'Hoàng Nato') -[LOCATED_IN {kind: occurrence}]-> (Location: TP.HCM)",
+        "(Case: Hoàng Nato) -[LOCATED_IN {kind: occurrence}]-> (Location: TP.HCM)",
+        "(Case: Phan Kim Nhi) -[LOCATED_IN {kind: occurrence}]-> (Location: TP.HCM)"
+      ]
+    },
+    {
+      "id": "Q3",
+      "question": "Lê Minh Thành bị tuyên bao nhiêu tháng tù, về tội gì, và tội đó được quy định tại điều nào của Bộ luật Hình sự với khung hình phạt cơ bản bao nhiêu?",
+      "facts": [
+        "[blhs-dieu-251 / Điều 251 BLHS - Tội mua bán trái phép chất ma túy] khoản 1: 1. Người nào mua bán trái phép chất ma túy, thì bị phạt tù từ 02 năm đến 07 năm.",
+        "[news-100260918080821054] Lê Minh Thành (bí danh: ); giai đoạn=first_instance, trạng thái=convicted, vai trò=chủ mưu; tội/hành vi=mua bán trái phép chất ma túy; mức án đã tuyên=36 tháng tù; bằng chứng: Sáng nay (18-9), Tòa án nhân dân TP Hà Nội mở phúc thẩm xét kháng cáo của 3 bị cáo Trịnh Vũ Kiên, Kim Xuân Tuấn, Nguyễn Quang Hưng, cùng 30 tuổi, trú Quảng Ninh, về tội mua bán trái phép chất ma túy.",
+        "[news-100260918080821054] MDMA: 5 viên; phạm vi=unknown, người=chưa quy thuộc; bằng chứng: Cơ quan công an thu giữ một hộp vuông màu xanh chứa 5 viên nén màu trắng. Kết luận giám định xác định số viên nén này là ma túy MDMA.",
+        "[news-100260918080821054] Ketamine: nửa chỉ; phạm vi=person_total, người=Lê Minh Thành; bằng chứng: Thành đồng ý mua 5 viên \"kẹo\" nhưng chỉ mua nửa chỉ ketamine với giá 1,7 triệu đồng. Tổng số tiền mua ma túy là 8,7 triệu đồng.",
+        "[news-100260918080821054] Vụ 'Mua bán trái phép chất ma túy': Ba thanh niên thừa nhận đã góp tiền để Lê Minh Thành mua ma túy dùng trong tiệc sinh nhật nhưng cho rằng sau đó họ không tiếp tục tham gia. Tòa sơ thẩm vẫn xác định cả ba là đồng phạm, tuyên mỗi người 2 năm tù về tội mua bán trái phép chất ma túy."
+      ]
+    },
+    {
+      "id": "Q4",
+      "question": "Giang hồ 'Hoàng Nato' bị bắt về hành vi gì, và hành vi đó có thể bị phạt tù tối đa bao nhiêu theo Bộ luật Hình sự?",
+      "facts": [
+        "[blhs-dieu-255 / Điều 255 BLHS - Tội tổ chức sử dụng trái phép chất ma túy] khoản 4: 4. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù 20 năm hoặc tù chung thân:\n\na) Gây tổn hại cho sức khỏe của 02 người trở lên mà tỷ lệ tổn thương cơ thể của mỗi người 61% trở lên;\n\nb) Làm chết 02 người trở lên.",
+        "[news-100260920221957595] Dương Minh Tuấn (bí danh: Hoàng Nato); giai đoạn=investigation, trạng thái=alleged, vai trò=tổ chức sử dụng trái phép chất ma túy; tội/hành vi=tổ chức sử dụng trái phép chất ma túy; mức án đã tuyên=chưa có thông tin; bằng chứng: Trước đó, sau thời gian tập trung lực lượng, triển khai các biện pháp công tác, PC04 tổ chức khám phá chuyên án, bắt Dương Minh Tuấn (43 tuổi, tức \"Hoàng Nato\", ngụ phường Gia Định) để điều tra về hành vi \"tổ chức sử dụng trái phép chất ma túy\".",
+        "[news-100260922111804786] Dương Minh Tuấn (bí danh: Hoàng Nato); giai đoạn=investigation, trạng thái=alleged, vai trò=nghi phạm; tội/hành vi=tổ chức sử dụng trái phép chất ma túy; mức án đã tuyên=chưa có thông tin; bằng chứng: Như Tuổi Trẻ đã thông tin, sau thời gian tập trung lực lượng, triển khai các biện pháp công tác, PC04 tổ chức khám phá chuyên án, bắt \"Hoàng Nato\" để điều tra về hành vi \"tổ chức sử dụng trái phép chất ma túy\".",
+        "[news-100260924095400982] Dương Minh Tuấn (bí danh: Hoàng Nato); giai đoạn=investigation, trạng thái=alleged, vai trò=người sử dụng; tội/hành vi=sử dụng trái phép chất ma túy; mức án đã tuyên=chưa có thông tin; bằng chứng: Đến ngày 12-9, \"Hoàng Nato\" tiếp tục nhờ mua 5 ống pod chill chứa etomidate để hút cùng Nhi. Tuy nhiên, sau đó cả hai bị lực lượng công an phát hiện, bắt giữ.",
+        "[news-100260924095400982] Dương Minh Tuấn (bí danh: Hoàng Nato); giai đoạn=investigation, trạng thái=alleged, vai trò=người sử dụng; tội/hành vi=sử dụng trái phép chất ma túy; mức án đã tuyên=chưa có thông tin; bằng chứng: \"Hoàng Nato\" khai lần đầu tiên sử dụng pod chill chứa etomidate là vào ngày 7-9, khi đó Hoàng đến nhà bạn gái là Phan Kim Nhi chơi.",
+        "[news-100260925144412498] Dương Minh Tuấn (bí danh: Hoàng Nato); giai đoạn=investigation, trạng thái=alleged, vai trò=nghi phạm; tội/hành vi=tổ chức sử dụng trái phép chất ma túy; mức án đã tuyên=chưa có thông tin; bằng chứng: Tại cơ quan điều tra, “Hoàng Nato” và bạn gái Phan Kim Nhi (TikToker Phannhibeauty) khai nhận đã cùng nhau sử dụng ma túy etomidate ngụy trang trong thuốc lá điện tử (pod chill).",
+        "[news-100260920221957595] ma túy tổng hợp: khoảng 100g; phạm vi=shipment, người=chưa quy thuộc; bằng chứng: Tang vật thu giữ gồm hơn 1.000 đầu pod chill chứa ma túy etomidate, khoảng 100g ma túy tổng hợp các loại cùng nhiều đồ vật, tài liệu liên quan.",
+        "[news-100260920221957595] Etomidate: hơn 1.000 đầu pod chill; phạm vi=shipment, người=chưa quy thuộc; bằng chứng: Tang vật thu giữ gồm hơn 1.000 đầu pod chill chứa ma túy etomidate, khoảng 100g ma túy tổng hợp các loại cùng nhiều đồ vật, tài liệu liên quan.",
+        "[news-100260922111804786] Etomidate: hơn 1.000 đầu pod chill; phạm vi=shipment, người=chưa quy thuộc; bằng chứng: Tang vật thu giữ gồm hơn 1.000 đầu pod chill chứa ma túy etomidate, khoảng 100g ma túy tổng hợp các loại cùng nhiều đồ vật, tài liệu liên quan.",
+        "[news-100260924095400982] Etomidate: 5 ống; phạm vi=person_total, người=Dương Minh Tuấn; bằng chứng: Đến ngày 12-9, \"Hoàng Nato\" tiếp tục nhờ mua 5 ống pod chill chứa etomidate để hút cùng Nhi. Tuy nhiên, sau đó cả hai bị lực lượng công an phát hiện, bắt giữ.",
+        "[news-100260925144412498] Etomidate: hơn 1.000 đầu pod chill chứa etomidate; phạm vi=operation_total, người=chưa quy thuộc; bằng chứng: Tang vật thu giữ trong chuyên án là hơn 1.000 đầu pod chill chứa etomidate cùng lượng lớn ma túy tổng hợp.",
+        "[news-100260920221957595] Vụ 'Bắt giang hồ 'Hoàng Nato'': Khám phá chuyên án, Công an TP.HCM bắt giang hồ 'Hoàng Nato' về hành vi tổ chức sử dụng trái phép chất ma túy. Tổng cộng 126 người bị bắt giữ, trong đó có 9 người nước ngoài.",
+        "[news-100260922111804786] Vụ 'Phan Kim Nhi': TikToker Phannhibeauty bị bắt để điều tra về hành vi tổ chức sử dụng trái phép chất ma túy.",
+        "[news-100260924095400982] Vụ 'Sử dụng ma túy etomidate': Phan Kim Nhi (TikToker Phannhibeauty) và 'Hoàng Nato' khai nhận đã cùng nhau sử dụng ma túy etomidate ngụy trang trong thuốc lá điện tử (pod chill).",
+        "[news-100260925144412498] Vụ 'Hoàng Nato': Công an TP.HCM đã triệt phá 8 đường dây ma túy, bắt giữ 126 người liên quan đến các hành vi mua bán, tàng trữ, tổ chức sử dụng và sử dụng trái phép chất ma túy, trong đó có 'Hoàng Nato' và bạn gái Phan Kim Nhi.",
+        "Khung tối đa của tội theo luật dưới đây không phải mức án đã tuyên cho người trong tin."
+      ]
+    },
+    {
+      "id": "Q5",
+      "question": "Cái Quang Huy bị truy tố về tội gì với loại ma túy nào? Với khối lượng MDMA trong vụ này, khoản nào của điều luật tương ứng được áp dụng và khung hình phạt là gì?",
+      "facts": [
+        "[blhs-dieu-250 / Điều 250 BLHS - Tội vận chuyển trái phép chất ma túy] khoản 1: 1. Người nào vận chuyển trái phép chất ma túy mà không nhằm mục đích sản xuất, mua bán, tàng trữ trái phép chất ma túy thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 02 năm đến 07 năm:\n\na) Đã bị xử phạt vi phạm hành chính về hành vi quy định tại Điều này hoặc đã bị kết án về tội này hoặc một trong các tội quy định tại các điều 248, 249, 251 và 252 của Bộ luật này, chưa được xóa án tích mà còn vi phạm;\n\nb) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng từ 01 gam đến dưới 500 gam;\n\nc) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng từ 0,1 gam đến dưới 05 gam;\n\nd) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng từ 01 kilôgam đến dưới 10 kilôgam;\n\nđ) Quả thuốc phiện khô có khối lượng từ 05 kilôgam đến dưới 50 kilôgam;\n\ne) Quả thuốc phiện tươi có khối lượng từ 01 kilôgam đến dưới 10 kilôgam;\n\ng) Các chất ma túy khác ở thể rắn có khối lượng từ 01 gam đến dưới 20 gam;\n\nh) Các chất ma túy khác ở thể lỏng có thể tích từ 10 mililít đến dưới 100 mililít;\n\ni) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm b đến điểm h khoản này.",
+        "[blhs-dieu-250 / Điều 250 BLHS - Tội vận chuyển trái phép chất ma túy] khoản 3: 3. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 15 năm đến 20 năm:\n\na) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng từ 01 kilôgam đến dưới 05 kilôgam;\n\nb) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng từ 30 gam đến dưới 100 gam;\n\nc) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng từ 25 kilôgam đến dưới 75 kilôgam;\n\nd) Quả thuốc phiện khô có khối lượng từ 200 kilôgam đến dưới 600 kilôgam;\n\nđ) Quả thuốc phiện tươi có khối lượng từ 50 kilôgam đến dưới 150 kilôgam;\n\ne) Các chất ma túy khác ở thể rắn có khối lượng từ 100 gam đến dưới 300 gam;\n\ng) Các chất ma túy khác ở thể lỏng có thể tích từ 250 mililít đến dưới 750 mililít;\n\nh) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm a đến điểm g khoản này.",
+        "[blhs-dieu-250 / Điều 250 BLHS - Tội vận chuyển trái phép chất ma túy] khoản 4: 4. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù 20 năm, tù chung thân hoặc tử hình:\n\na) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng 05 kilôgam trở lên;\n\nb) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng 100 gam trở lên;\n\nc) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng 75 kilôgam trở lên;\n\nd) Quả thuốc phiện khô có khối lượng 600 kilôgam trở lên;\n\nđ) Quả thuốc phiện tươi có khối lượng 150 kilôgam trở lên;\n\ne) Các chất ma túy khác ở thể rắn có khối lượng 300 gam trở lên;\n\ng) Các chất ma túy khác ở thể lỏng có thể tích 750 mililít trở lên;\n\nh) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm a đến điểm g khoản này.",
+        "[blhs-dieu-250 / Điều 250 BLHS - Tội vận chuyển trái phép chất ma túy] khoản 2: 2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 07 năm đến 15 năm:\n\na) Có tổ chức;\n\nb) Phạm tội 02 lần trở lên;\n\nc) Lợi dụng chức vụ, quyền hạn;\n\nd) Lợi dụng danh nghĩa cơ quan, tổ chức;\n\nđ) Sử dụng người dưới 16 tuổi vào việc phạm tội;\n\ne) Qua biên giới;\n\ng) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng từ 500 gam đến dưới 01 kilôgam;\n\nh) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng từ 05 gam đến dưới 30 gam;\n\ni) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng từ 10 kilôgam đến dưới 25 kilôgam;\n\nk) Quả thuốc phiện khô có khối lượng từ 50 kilôgam đến dưới 200 kilôgam;\n\nl) Quả thuốc phiện tươi có khối lượng từ 10 kilôgam đến dưới 50 kilôgam;\n\nm) Các chất ma túy khác ở thể rắn có khối lượng từ 20 gam đến dưới 100 gam;\n\nn) Các chất ma túy khác ở thể lỏng có thể tích từ 100 mililít đến dưới 250 mililít;\n\no) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm g đến điểm n khoản này;\n\np) Tái phạm nguy hiểm.",
+        "[news-100260917203001265] Cái Quang Huy (bí danh: ); giai đoạn=prosecution, trạng thái=alleged, vai trò=bị cáo; tội/hành vi=vận chuyển trái phép chất ma túy; mức án đã tuyên=chưa có thông tin; bằng chứng: Từ mối quen biết khi cùng làm bếp tại một nhà hàng ở Berlin (Đức), Cái Quang Huy bị cáo buộc hai lần vận chuyển ma túy về Việt Nam qua sân bay Nội Bài. Huy đang bỏ trốn vẫn phải chịu trách nhiệm hình sự tổng số ma túy gồm hơn 9,6kg MDMA và gần 406g Ketamine.",
+        "[news-100260917203001265] MDMA: gần 4,3kg; phạm vi=person_total, người=Nguyễn Tiến Đạt; bằng chứng: Tổng khối lượng ma túy Huy phải chịu trách nhiệm hình sự là hơn 9,6kg ma túy MDMA và khoảng 406g Ketamine. Nguyễn Tiến Đạt phải chịu trách nhiệm hình sự đối với gần 4,3kg MDMA.",
+        "[news-100260917203001265] Vụ 'Cái Quang Huy và Nguyễn Tiến Đạt': Cái Quang Huy bị cáo buộc hai lần vận chuyển ma túy về Việt Nam qua sân bay Nội Bài, tổng số ma túy gồm hơn 9,6kg MDMA và gần 406g Ketamine. Nguyễn Tiến Đạt cũng liên quan đến việc nhận hàng chứa ma túy.",
+        "Chưa đủ dữ kiện lượng/phạm vi/ngưỡng để tự xác định khoản áp dụng; cần đối chiếu văn bản."
+      ]
+    },
+    {
+      "id": "Q6",
+      "question": "Những vụ việc nào trong tin tức có liên quan đến ma túy MDMA?",
+      "facts": [
+        "Vụ case:vien-phap-y-tam-than-trung-uong: Vụ án Viện Pháp y tâm thần; Lê Văn Đông; người liên quan=Cao Thị Bích Hằng, Lê Văn Đông, Nguyễn Thị Mai Anh, Nguyễn Thị Thu Hoài, Nguyễn Văn Quang, Ngô Việt Dũng, Trần Quốc An, Trần Văn Trường; tóm tắt=Bà Nguyễn Thị Mai Anh thao túng 39 bác sĩ, điều dưỡng tại Viện Pháp y tâm thần, biến nơi này thành chốn trú ẩn cho tội phạm. Nhiều bị cáo đã chi tiền để 'chạy' giám định tâm thần nhằm được chữa bệnh bắt buộc.; Lê Văn Đông, trong thời gian chữa bệnh bắt buộc tại Viện Pháp y tâm thần Trung ương, đã tổ chức sử dụng ma túy trên bãi biển Sầm Sơn cùng với một số người khác. Đông khai rằng mình chỉ 'vô tình' gặp đoàn cán bộ của viện và mời họ cùng sử dụng ma túy.; nguồn=news-100260924105118645, news-100260930085028036; Khi khám xét phòng của vợ chồng Mai Anh trong viện, công an tiếp tục thu giữ MDMA, ketamine, methamphetamine, cần sa và các dụng cụ sử dụng ma túy. | Theo cáo trạng, tại đây công an thu 0,686g ma túy MDMA, ba bộ tẩu tự tạo đều dính methamphetamine cùng một số thiết bị âm thanh, dụng cụ sử dụng ma túy. Đông khai toàn bộ là của mình để sử dụng ma túy trong viện.",
+        "Vụ news-100260918080821054:case:4d202f4548260fd17a57: Mua bán trái phép chất ma túy; người liên quan=Kim Xuân Tuấn, Lê Minh Thành, Nguyễn Quang Hưng, Trịnh Vũ Kiên; tóm tắt=Ba thanh niên thừa nhận đã góp tiền để Lê Minh Thành mua ma túy dùng trong tiệc sinh nhật nhưng cho rằng sau đó họ không tiếp tục tham gia. Tòa sơ thẩm vẫn xác định cả ba là đồng phạm, tuyên mỗi người 2 năm tù về tội mua bán trái phép chất ma túy.; nguồn=news-100260918080821054; Cơ quan công an thu giữ một hộp vuông màu xanh chứa 5 viên nén màu trắng. Kết luận giám định xác định số viên nén này là ma túy MDMA.",
+        "Vụ news-100260917203001265:case:428d8ea981153abb5da8: Cái Quang Huy và Nguyễn Tiến Đạt; người liên quan=Cái Quang Huy, Nguyễn Tiến Đạt; tóm tắt=Cái Quang Huy bị cáo buộc hai lần vận chuyển ma túy về Việt Nam qua sân bay Nội Bài, tổng số ma túy gồm hơn 9,6kg MDMA và gần 406g Ketamine. Nguyễn Tiến Đạt cũng liên quan đến việc nhận hàng chứa ma túy.; nguồn=news-100260917203001265; Tổng khối lượng ma túy Huy phải chịu trách nhiệm hình sự là hơn 9,6kg ma túy MDMA và khoảng 406g Ketamine. Nguyễn Tiến Đạt phải chịu trách nhiệm hình sự đối với gần 4,3kg MDMA."
+      ]
+    }
+  ]
+}

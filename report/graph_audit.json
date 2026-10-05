@@ -1,0 +1,544 @@
+{
+  "QA": {
+    "cypher": "MATCH (n) RETURN labels(n)[0] AS label, count(*) AS n ORDER BY n DESC",
+    "rows": [
+      {
+        "label": "Rule",
+        "n": 267
+      },
+      {
+        "label": "Clause",
+        "n": 99
+      },
+      {
+        "label": "Participation",
+        "n": 44
+      },
+      {
+        "label": "Person",
+        "n": 40
+      },
+      {
+        "label": "Substance",
+        "n": 19
+      },
+      {
+        "label": "Article",
+        "n": 18
+      },
+      {
+        "label": "DrugFinding",
+        "n": 17
+      },
+      {
+        "label": "Case",
+        "n": 14
+      },
+      {
+        "label": "Term",
+        "n": 14
+      },
+      {
+        "label": "Crime",
+        "n": 13
+      },
+      {
+        "label": "Location",
+        "n": 13
+      }
+    ]
+  },
+  "QB": {
+    "cypher": "MATCH (p:Person)-[:HAS_PARTICIPATION]->(pt:Participation)-[:IN_CASE]->(k:Case)-[:CHARGED_WITH]->(c:Crime)<-[:DEFINES]-(a:Article) RETURN p.name AS person, k.name AS case_name, c.name AS crime, a.name AS article LIMIT 25",
+    "rows": [
+      {
+        "person": "Nguyễn Tiến Đạt",
+        "case_name": "Cái Quang Huy và Nguyễn Tiến Đạt",
+        "crime": "vận chuyển trái phép chất ma túy",
+        "article": "Điều 250 BLHS"
+      },
+      {
+        "person": "Cái Quang Huy",
+        "case_name": "Cái Quang Huy và Nguyễn Tiến Đạt",
+        "crime": "vận chuyển trái phép chất ma túy",
+        "article": "Điều 250 BLHS"
+      },
+      {
+        "person": "Trịnh Vũ Kiên",
+        "case_name": "Mua bán trái phép chất ma túy",
+        "crime": "mua bán trái phép chất ma túy",
+        "article": "Điều 251 BLHS"
+      },
+      {
+        "person": "Nguyễn Quang Hưng",
+        "case_name": "Mua bán trái phép chất ma túy",
+        "crime": "mua bán trái phép chất ma túy",
+        "article": "Điều 251 BLHS"
+      },
+      {
+        "person": "Lê Minh Thành",
+        "case_name": "Mua bán trái phép chất ma túy",
+        "crime": "mua bán trái phép chất ma túy",
+        "article": "Điều 251 BLHS"
+      },
+      {
+        "person": "Kim Xuân Tuấn",
+        "case_name": "Mua bán trái phép chất ma túy",
+        "crime": "mua bán trái phép chất ma túy",
+        "article": "Điều 251 BLHS"
+      },
+      {
+        "person": "Phạm Minh Sang",
+        "case_name": "Bắt giang hồ 'Hoàng Nato'",
+        "crime": "tổ chức sử dụng trái phép chất ma túy",
+        "article": "Điều 255 BLHS"
+      },
+      {
+        "person": "Phạm Tài Vình",
+        "case_name": "Bắt giang hồ 'Hoàng Nato'",
+        "crime": "tổ chức sử dụng trái phép chất ma túy",
+        "article": "Điều 255 BLHS"
+      },
+      {
+        "person": "Dương Minh Tuấn",
+        "case_name": "Bắt giang hồ 'Hoàng Nato'",
+        "crime": "tổ chức sử dụng trái phép chất ma túy",
+        "article": "Điều 255 BLHS"
+      },
+      {
+        "person": "Kim Yu Young",
+        "case_name": "Bắt giang hồ 'Hoàng Nato'",
+        "crime": "tổ chức sử dụng trái phép chất ma túy",
+        "article": "Điều 255 BLHS"
+      },
+      {
+        "person": "Giang Quốc Khánh",
+        "case_name": "Bắt giang hồ 'Hoàng Nato'",
+        "crime": "tổ chức sử dụng trái phép chất ma túy",
+        "article": "Điều 255 BLHS"
+      },
+      {
+        "person": "Lê Đăng Khoa",
+        "case_name": "Bắt giang hồ 'Hoàng Nato'",
+        "crime": "tổ chức sử dụng trái phép chất ma túy",
+        "article": "Điều 255 BLHS"
+      },
+      {
+        "person": "Nguyễn Thành Quốc",
+        "case_name": "Bắt giang hồ 'Hoàng Nato'",
+        "crime": "tổ chức sử dụng trái phép chất ma túy",
+        "article": "Điều 255 BLHS"
+      },
+      {
+        "person": "Phạm Phương Anh",
+        "case_name": "Bắt giang hồ 'Hoàng Nato'",
+        "crime": "tổ chức sử dụng trái phép chất ma túy",
+        "article": "Điều 255 BLHS"
+      },
+      {
+        "person": "Phạm Minh Sang",
+        "case_name": "Bắt giang hồ 'Hoàng Nato'",
+        "crime": "mua bán trái phép chất ma túy",
+        "article": "Điều 251 BLHS"
+      },
+      {
+        "person": "Phạm Tài Vình",
+        "case_name": "Bắt giang hồ 'Hoàng Nato'",
+        "crime": "mua bán trái phép chất ma túy",
+        "article": "Điều 251 BLHS"
+      },
+      {
+        "person": "Dương Minh Tuấn",
+        "case_name": "Bắt giang hồ 'Hoàng Nato'",
+        "crime": "mua bán trái phép chất ma túy",
+        "article": "Điều 251 BLHS"
+      },
+      {
+        "person": "Kim Yu Young",
+        "case_name": "Bắt giang hồ 'Hoàng Nato'",
+        "crime": "mua bán trái phép chất ma túy",
+        "article": "Điều 251 BLHS"
+      },
+      {
+        "person": "Giang Quốc Khánh",
+        "case_name": "Bắt giang hồ 'Hoàng Nato'",
+        "crime": "mua bán trái phép chất ma túy",
+        "article": "Điều 251 BLHS"
+      },
+      {
+        "person": "Lê Đăng Khoa",
+        "case_name": "Bắt giang hồ 'Hoàng Nato'",
+        "crime": "mua bán trái phép chất ma túy",
+        "article": "Điều 251 BLHS"
+      },
+      {
+        "person": "Nguyễn Thành Quốc",
+        "case_name": "Bắt giang hồ 'Hoàng Nato'",
+        "crime": "mua bán trái phép chất ma túy",
+        "article": "Điều 251 BLHS"
+      },
+      {
+        "person": "Phạm Phương Anh",
+        "case_name": "Bắt giang hồ 'Hoàng Nato'",
+        "crime": "mua bán trái phép chất ma túy",
+        "article": "Điều 251 BLHS"
+      },
+      {
+        "person": "Dương Minh Tuấn",
+        "case_name": "Phan Kim Nhi",
+        "crime": "tổ chức sử dụng trái phép chất ma túy",
+        "article": "Điều 255 BLHS"
+      },
+      {
+        "person": "Phan Kim Nhi",
+        "case_name": "Phan Kim Nhi",
+        "crime": "tổ chức sử dụng trái phép chất ma túy",
+        "article": "Điều 255 BLHS"
+      },
+      {
+        "person": "Nguyễn Minh Đức",
+        "case_name": "Nguyễn Minh Đức",
+        "crime": "tổ chức sử dụng trái phép chất ma túy",
+        "article": "Điều 255 BLHS"
+      }
+    ]
+  },
+  "QC": {
+    "cypher": "MATCH (a:Article {doc_id:'blhs-dieu-251'})-[:HAS_CLAUSE]->(cl:Clause) RETURN a.name AS article, cl.number AS clause, cl.penalty_text AS penalty ORDER BY clause",
+    "rows": [
+      {
+        "article": "Điều 251 BLHS",
+        "clause": 1,
+        "penalty": "1. Người nào mua bán trái phép chất ma túy, thì bị phạt tù từ 02 năm đến 07 năm."
+      },
+      {
+        "article": "Điều 251 BLHS",
+        "clause": 2,
+        "penalty": "2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 07 năm đến 15 năm"
+      },
+      {
+        "article": "Điều 251 BLHS",
+        "clause": 3,
+        "penalty": "3. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 15 năm đến 20 năm"
+      },
+      {
+        "article": "Điều 251 BLHS",
+        "clause": 4,
+        "penalty": "4. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù 20 năm, tù chung thân hoặc tử hình"
+      },
+      {
+        "article": "Điều 251 BLHS",
+        "clause": 5,
+        "penalty": "5. Người phạm tội còn có thể bị phạt tiền từ 5.000.000 đồng đến 500.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản."
+      }
+    ]
+  },
+  "QD": {
+    "cypher": "MATCH (p:Person {name:'Cái Quang Huy'})-[:HAS_PARTICIPATION]->(pt:Participation)-[:IN_CASE]->(k:Case), (pt)-[:CHARGED_WITH]->(c:Crime)<-[:DEFINES]-(a:Article) RETURN p.name AS person, pt.status AS status, c.name AS crime, a.name AS article, k.doc_id AS source",
+    "rows": [
+      {
+        "person": "Cái Quang Huy",
+        "status": "alleged",
+        "crime": "vận chuyển trái phép chất ma túy",
+        "article": "Điều 250 BLHS",
+        "source": "news-100260917203001265"
+      }
+    ]
+  },
+  "Q5_findings": {
+    "cypher": "MATCH (p:Person {name:'Cái Quang Huy'})-[:HAS_PARTICIPATION]->(:Participation)-[:IN_CASE]->(k:Case)-[:HAS_FINDING]->(f:DrugFinding)-[:OF_SUBSTANCE]->(s:Substance) RETURN DISTINCT s.name AS substance, f.amount_text AS amount, f.qualifier AS qualifier, f.scope AS scope, f.evidence_text AS evidence, f.doc_id AS source",
+    "rows": [
+      {
+        "substance": "MDMA",
+        "amount": "gần 4,3kg",
+        "qualifier": "approximate",
+        "scope": "person_total",
+        "evidence": "Tổng khối lượng ma túy Huy phải chịu trách nhiệm hình sự là hơn 9,6kg ma túy MDMA và khoảng 406g Ketamine. Nguyễn Tiến Đạt phải chịu trách nhiệm hình sự đối với gần 4,3kg MDMA.",
+        "source": "news-100260917203001265"
+      }
+    ]
+  },
+  "missing_quantities": {
+    "cypher": "MATCH (k:Case)-[:HAS_FINDING]->(f:DrugFinding)-[:OF_SUBSTANCE]->(s:Substance) WHERE f.amount_text = '' RETURN k.name AS case_name, s.name AS substance, f.amount_text AS amount, f.value AS value, f.qualifier AS qualifier, f.evidence_text AS evidence, f.doc_id AS source ORDER BY source, substance",
+    "rows": [
+      {
+        "case_name": "Vụ án Viện Pháp y tâm thần",
+        "substance": "Ketamine",
+        "amount": "",
+        "value": null,
+        "qualifier": "unknown",
+        "evidence": "Khi khám xét phòng của vợ chồng Mai Anh trong viện, công an tiếp tục thu giữ MDMA, ketamine, methamphetamine, cần sa và các dụng cụ sử dụng ma túy.",
+        "source": "news-100260924105118645"
+      },
+      {
+        "case_name": "Vụ án Viện Pháp y tâm thần",
+        "substance": "MDMA",
+        "amount": "",
+        "value": null,
+        "qualifier": "unknown",
+        "evidence": "Khi khám xét phòng của vợ chồng Mai Anh trong viện, công an tiếp tục thu giữ MDMA, ketamine, methamphetamine, cần sa và các dụng cụ sử dụng ma túy.",
+        "source": "news-100260924105118645"
+      },
+      {
+        "case_name": "Vụ án Viện Pháp y tâm thần",
+        "substance": "Methamphetamine",
+        "amount": "",
+        "value": null,
+        "qualifier": "unknown",
+        "evidence": "Khi khám xét phòng của vợ chồng Mai Anh trong viện, công an tiếp tục thu giữ MDMA, ketamine, methamphetamine, cần sa và các dụng cụ sử dụng ma túy.",
+        "source": "news-100260924105118645"
+      },
+      {
+        "case_name": "Vụ án Viện Pháp y tâm thần",
+        "substance": "cần sa",
+        "amount": "",
+        "value": null,
+        "qualifier": "unknown",
+        "evidence": "Khi khám xét phòng của vợ chồng Mai Anh trong viện, công an tiếp tục thu giữ MDMA, ketamine, methamphetamine, cần sa và các dụng cụ sử dụng ma túy.",
+        "source": "news-100260924105118645"
+      },
+      {
+        "case_name": "Lê Văn Đông",
+        "substance": "Ketamine",
+        "amount": "",
+        "value": null,
+        "qualifier": "unknown",
+        "evidence": "Tại buồng điều trị của Mai Anh ở khoa điều trị bắt buộc nữ, công an cũng phát hiện ketamine cùng nhiều dụng cụ dính methamphetamine, cần sa. Mai Anh khai không biết số ma túy này, còn Đông nhận là của mình. Bị cáo giải thích do được đi lại giữa hai khoa và sợ phòng điều trị của mình bị kiểm tra nên mang sang phòng vợ cất giấu.",
+        "source": "news-100260930085028036"
+      },
+      {
+        "case_name": "Lê Văn Đông",
+        "substance": "Methamphetamine",
+        "amount": "",
+        "value": null,
+        "qualifier": "unknown",
+        "evidence": "Theo cáo trạng, tại đây công an thu 0,686g ma túy MDMA, ba bộ tẩu tự tạo đều dính methamphetamine cùng một số thiết bị âm thanh, dụng cụ sử dụng ma túy. Đông khai toàn bộ là của mình để sử dụng ma túy trong viện.",
+        "source": "news-100260930085028036"
+      },
+      {
+        "case_name": "Lê Văn Đông",
+        "substance": "cần sa",
+        "amount": "",
+        "value": null,
+        "qualifier": "unknown",
+        "evidence": "Sau khi sử dụng xong, Đông nhét túi cần sa còn lại vào túi quần bên trái của An, bảo giữ để tiếp tục sử dụng sau.",
+        "source": "news-100260930085028036"
+      }
+    ]
+  },
+  "missing_charges": {
+    "cypher": "MATCH (p:Person)-[:HAS_PARTICIPATION]->(pt:Participation)-[:IN_CASE]->(k:Case) WHERE NOT (pt)-[:CHARGED_WITH]->(:Crime) RETURN p.name AS person, pt.charge_raw AS charge, pt.status AS status, pt.evidence_text AS evidence, k.doc_id AS source",
+    "rows": [
+      {
+        "person": "Phan Kim Nhi",
+        "charge": "sử dụng trái phép chất ma túy",
+        "status": "alleged",
+        "evidence": "\"Hoàng Nato\" khai lần đầu tiên sử dụng pod chill chứa etomidate là vào ngày 7-9, khi đó Hoàng đến nhà bạn gái là Phan Kim Nhi chơi.",
+        "source": "news-100260924095400982"
+      },
+      {
+        "person": "Dương Minh Tuấn",
+        "charge": "sử dụng trái phép chất ma túy",
+        "status": "alleged",
+        "evidence": "Đến ngày 12-9, \"Hoàng Nato\" tiếp tục nhờ mua 5 ống pod chill chứa etomidate để hút cùng Nhi. Tuy nhiên, sau đó cả hai bị lực lượng công an phát hiện, bắt giữ.",
+        "source": "news-100260924095400982"
+      },
+      {
+        "person": "Phan Kim Nhi",
+        "charge": "sử dụng trái phép chất ma túy",
+        "status": "alleged",
+        "evidence": "Đến ngày 12-9, \"Hoàng Nato\" tiếp tục nhờ mua 5 ống pod chill chứa etomidate để hút cùng Nhi. Tuy nhiên, sau đó cả hai bị lực lượng công an phát hiện, bắt giữ.",
+        "source": "news-100260924095400982"
+      },
+      {
+        "person": "Dương Minh Tuấn",
+        "charge": "sử dụng trái phép chất ma túy",
+        "status": "alleged",
+        "evidence": "\"Hoàng Nato\" khai lần đầu tiên sử dụng pod chill chứa etomidate là vào ngày 7-9, khi đó Hoàng đến nhà bạn gái là Phan Kim Nhi chơi.",
+        "source": "news-100260924095400982"
+      },
+      {
+        "person": "Nguyễn Thị Mai Anh",
+        "charge": "nhận hối lộ",
+        "status": "alleged",
+        "evidence": "Trong vụ án này, Nguyễn Thị Mai Anh là cái tên xuất hiện trong hàng loạt cáo buộc liên quan việc đưa tiền cho lãnh đạo, bác sĩ, điều dưỡng và môi giới “chạy” kết luận giám định tâm thần.",
+        "source": "news-100260924105118645"
+      },
+      {
+        "person": "Nguyễn Văn Quang",
+        "charge": "nhận hối lộ",
+        "status": "alleged",
+        "evidence": "Điều dưỡng Nguyễn Văn Quang bị truy tố cả tội nhận hối lộ và đánh bạc, do nhiều lần cá độ bóng đá quốc tế với số tiền giao dịch lên tới 10 triệu đồng mỗi trận.",
+        "source": "news-100260924105118645"
+      },
+      {
+        "person": "Nguyễn Thị Thu Hoài",
+        "charge": "nhận hối lộ",
+        "status": "alleged",
+        "evidence": "Nguyễn Thị Thu Hoài, Phó trưởng Phòng Tổ chức cán bộ, bị cáo buộc nhận 3,46 tỉ đồng của 7 người, sau đó chuyển 3 tỉ đồng cho Viện trưởng Trần Văn Trường để tuyển dụng trái quy định.",
+        "source": "news-100260924105118645"
+      },
+      {
+        "person": "Nguyễn Thị Mai Anh",
+        "charge": "chạy giám định tâm thần",
+        "status": "alleged",
+        "evidence": "Còn Mai Anh, từ một người vào viện chữa bệnh bắt buộc, bị cáo buộc dùng tiền tạo dựng quan hệ với nhiều cán bộ rồi trở thành đầu mối nhận hàng tỉ đồng “chạy” giám định tâm thần cho những người vướng vòng lao lý.",
+        "source": "news-100260924105118645"
+      },
+      {
+        "person": "Trần Quốc An",
+        "charge": "sử dụng trái phép chất ma túy",
+        "status": "alleged",
+        "evidence": "Điều dưỡng Trần Quốc An của Viện Pháp y tâm thần Trung ương cũng có mặt. Cáo trạng xác định An hút cần sa, uống “nước vui” do Đông cung cấp và còn cất giấu ma túy trong túi quần.",
+        "source": "news-100260924105118645"
+      },
+      {
+        "person": "Trần Văn Trường",
+        "charge": "nhận hối lộ",
+        "status": "alleged",
+        "evidence": "Cơ quan điều tra cáo buộc Thưởng đưa tổng cộng 250 triệu đồng cho ông Trần Văn Trường, khi đó là viện trưởng; ông Dương Văn Lương, Phó viện trưởng và ông Dương Văn Biết, Trưởng khoa giám định.",
+        "source": "news-100260924105118645"
+      },
+      {
+        "person": "Lê Văn Đông",
+        "charge": "sử dụng trái phép chất ma túy",
+        "status": "alleged",
+        "evidence": "Đông mang theo loa, bàn DJ và ma túy để tổ chức “bay lắc”. Đáng chú ý, trong \"cuộc vui\" này còn có cả điều dưỡng của viện - người có nhiệm vụ chăm sóc, quản lý bệnh nhân.",
+        "source": "news-100260924105118645"
+      },
+      {
+        "person": "Nguyễn Minh Nhân",
+        "charge": "chống người thi hành công vụ",
+        "status": "charged",
+        "evidence": "Sáng 26-9, Công an tỉnh An Giang cho biết vừa ra quyết định khởi tố vụ án, khởi tố bị can và lệnh tạm giam Nguyễn Minh Nhân (21 tuổi, ở phường Rạch Giá, tỉnh An Giang) về hành vi chống người thi hành công vụ.",
+        "source": "news-100260926112415229"
+      },
+      {
+        "person": "Ngô Việt Dũng",
+        "charge": "tàng trữ, vận chuyển ma túy",
+        "status": "charged",
+        "evidence": "Trong khi đó, cáo trạng xác định Dũng không chỉ mang và lắp thiết bị âm thanh. Trong quá trình cuộc vui diễn ra, Dũng còn sử dụng “nước vui”, sau đó đưa đồ uống có ma túy và ống thủy tinh chứa cần sa cho người khác sử dụng.",
+        "source": "news-100260930085028036"
+      },
+      {
+        "person": "Lê Văn Đông",
+        "charge": "tàng trữ nhiều loại ma túy",
+        "status": "charged",
+        "evidence": "Đứng trước bục khai báo, Đông trả lời khá rõ ràng, rành rọt các câu hỏi của chủ tọa. Bị cáo thừa nhận tổ chức sử dụng trái phép chất ma túy tại Sầm Sơn và tàng trữ nhiều loại ma túy bị cơ quan điều tra thu giữ.",
+        "source": "news-100260930085028036"
+      },
+      {
+        "person": "Trần Quốc An",
+        "charge": "",
+        "status": "unknown",
+        "evidence": "Tối hôm ấy, Đông gọi Trần Quốc An, 42 tuổi, điều dưỡng khoa điều trị bắt buộc nam Viện Pháp y tâm thần Trung ương, cùng vợ là Cao Thị Bích Hằng ra bãi biển ăn uống, nghe nhạc. Đông đưa cho An một chén nước trà đã pha “nước vui” cùng sử dụng.",
+        "source": "news-100260930085028036"
+      },
+      {
+        "person": "Nguyễn Thị Mai Anh",
+        "charge": "",
+        "status": "unknown",
+        "evidence": "Tại buồng điều trị của Mai Anh ở khoa điều trị bắt buộc nữ, công an cũng phát hiện ketamine cùng nhiều dụng cụ dính methamphetamine, cần sa. Mai Anh khai không biết số ma túy này, còn Đông nhận là của mình. Bị cáo giải thích do được đi lại giữa hai khoa và sợ phòng điều trị của mình bị kiểm tra nên mang sang phòng vợ cất giấu.",
+        "source": "news-100260930085028036"
+      },
+      {
+        "person": "Cao Thị Bích Hằng",
+        "charge": "",
+        "status": "unknown",
+        "evidence": "Tối hôm ấy, Đông gọi Trần Quốc An, 42 tuổi, điều dưỡng khoa điều trị bắt buộc nam Viện Pháp y tâm thần Trung ương, cùng vợ là Cao Thị Bích Hằng ra bãi biển ăn uống, nghe nhạc. Đông đưa cho An một chén nước trà đã pha “nước vui” cùng sử dụng.",
+        "source": "news-100260930085028036"
+      }
+    ]
+  },
+  "relationships": {
+    "cypher": "MATCH ()-[r]->() RETURN type(r) AS rel, count(*) AS n ORDER BY n DESC",
+    "rows": [
+      {
+        "rel": "FOR_SUBSTANCE",
+        "n": 291
+      },
+      {
+        "rel": "MENTIONS",
+        "n": 278
+      },
+      {
+        "rel": "HAS_RULE",
+        "n": 267
+      },
+      {
+        "rel": "HAS_CLAUSE",
+        "n": 99
+      },
+      {
+        "rel": "HAS_PARTICIPATION",
+        "n": 44
+      },
+      {
+        "rel": "IN_CASE",
+        "n": 44
+      },
+      {
+        "rel": "CHARGED_WITH",
+        "n": 38
+      },
+      {
+        "rel": "HAS_FINDING",
+        "n": 17
+      },
+      {
+        "rel": "OF_SUBSTANCE",
+        "n": 17
+      },
+      {
+        "rel": "LOCATED_IN",
+        "n": 15
+      },
+      {
+        "rel": "DEFINES_TERM",
+        "n": 14
+      },
+      {
+        "rel": "DEFINES",
+        "n": 13
+      },
+      {
+        "rel": "ATTRIBUTED_TO",
+        "n": 11
+      }
+    ]
+  },
+  "MDMA_cases": {
+    "cypher": "MATCH (k:Case)-[:HAS_FINDING]->(:DrugFinding)-[:OF_SUBSTANCE]->(:Substance {name:'MDMA'}) RETURN k.canonical_case_id AS case_id, collect(DISTINCT k.name) AS names, collect(DISTINCT k.doc_id) AS sources ORDER BY case_id",
+    "rows": [
+      {
+        "case_id": "case:vien-phap-y-tam-than-trung-uong",
+        "names": [
+          "Vụ án Viện Pháp y tâm thần",
+          "Lê Văn Đông"
+        ],
+        "sources": [
+          "news-100260924105118645",
+          "news-100260930085028036"
+        ]
+      },
+      {
+        "case_id": "news-100260917203001265:case:428d8ea981153abb5da8",
+        "names": [
+          "Cái Quang Huy và Nguyễn Tiến Đạt"
+        ],
+        "sources": [
+          "news-100260917203001265"
+        ]
+      },
+      {
+        "case_id": "news-100260918080821054:case:4d202f4548260fd17a57",
+        "names": [
+          "Mua bán trái phép chất ma túy"
+        ],
+        "sources": [
+          "news-100260918080821054"
+        ]
+      }
+    ]
+  }
+}

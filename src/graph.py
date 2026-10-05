@@ -7,8 +7,9 @@ Contract (fixed — bench_kg.py and the tests rely on it):
     Neo4jGraph.context(question, doc_ids)         -> list[str] facts               (TODO KG-3)
     GraphRAGAgent.answer(question, top_k)         -> str                           (TODO KG-4)
 
-Everything else in this file is a HINT: one possible ontology (below). Use it as is, change it,
-or design your own — your own ontology + report/ONTOLOGY.md earns the bonus (see SUBMISSION.md).
+The default ontology is implemented in graph_ontology.py and documented in report/ONTOLOGY.md.
+Set KG_ONTOLOGY=hint to reproduce the suggested ontology for comparison benchmarks.
+The original HINT extraction/writing helpers below are retained for that baseline.
 
 Suggested ontology (Crime is the bridge between the law KB and the news KB):
 
@@ -25,6 +26,8 @@ from __future__ import annotations
 import difflib
 import json
 import re
+import os
+import unicodedata
 from pathlib import Path
 from typing import Any, Callable
 
@@ -49,14 +52,22 @@ def load_markdown_docs(folder: str | Path) -> list[Document]:
 
 def normalize_crime(name: str) -> str:
     """'Tội Mua bán trái phép chất ma túy' -> 'mua bán trái phép chất ma túy'."""
-    name = re.sub(r"\s+", " ", name.strip().strip("\"'“”").lower())
+    name = unicodedata.normalize("NFC", name).replace("tuý", "túy")
+    name = re.sub(r"\s+", " ", name.strip().strip("\"'“”").lower()).replace("tuý", "túy")
     return name.removeprefix("tội ").strip()
 
 def link_entity(name: str, known: list[str], normalize: Callable[[str], str] = normalize_crime) -> str | None:
     """Map a free-text mention (e.g. a charge written by a journalist) onto one canonical name in `known`."""
-    # TODO KG-1: normalize both sides, exact match first, then difflib.get_close_matches(cutoff=0.8).
-    #            Return the ORIGINAL spelling from `known`; return None when nothing is close enough.
-    raise NotImplementedError("TODO KG-1 link_entity (src/graph.py) - kiểm tra: pytest tests/test_graph.py -k LinkEntity")
+    query = normalize(name)
+    if not query:
+        return None
+    candidates = {}
+    for candidate in known:
+        candidates.setdefault(normalize(candidate), candidate)
+    if query in candidates:
+        return candidates[query]
+    matches = difflib.get_close_matches(query, list(candidates), n=1, cutoff=0.8)
+    return candidates[matches[0]] if matches else None
 
 def find_substances(text: str) -> list[str]:
     lowered = text.lower()
@@ -247,33 +258,34 @@ class Neo4jGraph:
     # ---------------------------------------------------------------- KG-3
 
     def context(self, question: str, doc_ids: list[str], max_facts: int = 60) -> list[str]:
-        """Graph facts for a question: seeds + 1 hop, then the legal basis of every case reached."""
-        # TODO KG-3: multi-hop retrieval over YOUR ontology.
-        #   1. self.seed_facts(question, doc_ids) -> (seed_ids, facts)   (ontology-independent, already written)
-        #   2. From the seeds, walk to the other KB through your bridge node (Cypher, see LAB_GUIDE Bước 5)
-        #   3. Append one readable string per fact; return the list.
-        #
-        # HINT (suggested ontology):
-        #   a. Cases that are a seed or next to one -> add f"Vụ việc '{name}': {summary}" to facts
-        #        MATCH (k:Case) WHERE elementId(k) IN $ids OR EXISTS { MATCH (s)--(k) WHERE elementId(s) IN $ids }
-        #   b. For those cases follow
-        #        (Case)-[:CHARGED_WITH]->(Crime)<-[:DEFINES]-(Article)-[:HAS_CLAUSE]->(Clause)
-        #      keep clause 1 + clauses that MENTION a Substance the case INVOLVES
-        #   c. Articles named in the question ("Điều 251" -> re.findall(r"[Đđ]iều (\d+)", question)):
-        #      clause 1 + clauses mentioning find_substances(question)
-        #   d. One fact per clause: f"[{article_id} - {title}] khoản {number}: {text}"
-        raise NotImplementedError("TODO KG-3 Neo4jGraph.context (src/graph.py) - kiểm tra: python bench_kg.py --check")
+        """Source-backed facts with multi-hop legal retrieval and full-graph aggregation."""
+        from .graph_ontology import retrieve_context, hint_context
+
+        if os.getenv("KG_ONTOLOGY", "custom") == "hint":
+            return hint_context(self, question, doc_ids, max_facts)
+        return retrieve_context(self, question, doc_ids, max_facts)
 
 # ---------------------------------------------------------------------------------------------- KG-2
 
 def build_graph(graph: Neo4jGraph, law_docs: list[Document], news_docs: list[Document],
                 llm_fn: Callable[..., str]) -> None:
     """Load both KBs into an empty graph. llm_fn(prompt, json_mode=False) -> str (metered OpenAI chat)."""
-    # TODO KG-2: create YOUR ontology in Neo4j from both KBs.
-    #   Contract: every node created from one document has the property doc_id = Document.id.
-    #   Fastest start: the HINT helpers above (parse_law_article, extract_news_cases, suggested_constraints,
-    #   add_law_article, add_news_case). Own ontology + report/ONTOLOGY.md = bonus (SUBMISSION.md).
-    raise NotImplementedError("TODO KG-2 build_graph (src/graph.py) - kiểm tra: python bench_kg.py --build --limit 2")
+    mode = os.getenv("KG_ONTOLOGY", "custom")
+    if mode == "hint":
+        graph.suggested_constraints()
+        articles = [parse_law_article(doc) for doc in law_docs]
+        for article in articles:
+            graph.add_law_article(article)
+        crimes = [a["crime"] for a in articles if a["crime"]]
+        for doc in news_docs:
+            for case in extract_news_cases(doc, lambda p: llm_fn(p, json_mode=True), crimes):
+                graph.add_news_case(case, doc)
+    elif mode == "custom":
+        from .graph_ontology import build_ontology
+
+        build_ontology(graph, law_docs, news_docs, llm_fn)
+    else:
+        raise ValueError("KG_ONTOLOGY must be custom or hint")
 
 # ---------------------------------------------------------------------------------------------- KG-4
 
@@ -298,6 +310,13 @@ class GraphRAGAgent:
         self.llm_fn = llm_fn
 
     def answer(self, question: str, top_k: int = 3) -> str:
-        # TODO KG-4: vector top-k (same as flat RAG) -> doc_ids of the hits -> self.graph.context(question, doc_ids)
-        #            -> fill GRAPH_PROMPT -> self.llm_fn(prompt)
-        raise NotImplementedError("TODO KG-4 GraphRAGAgent.answer (src/graph.py) - kiểm tra: pytest tests/test_graph.py -k GraphRAGAgent")
+        """Add graph facts to the same vector context used by Flat RAG."""
+        chunks = self.store.search(question, top_k=top_k)
+        doc_ids = list(dict.fromkeys(c["metadata"]["doc_id"] for c in chunks))
+        facts = self.graph.context(question, doc_ids)
+        prompt = GRAPH_PROMPT.format(
+            facts="\n".join(f"- {fact}" for fact in facts),
+            chunks="\n\n".join(f"[{i}] {c['content']}" for i, c in enumerate(chunks, 1)),
+            question=question,
+        )
+        return self.llm_fn(prompt)
